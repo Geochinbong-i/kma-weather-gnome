@@ -112,6 +112,8 @@ class KmaSection extends St.Button {
         this._grid = new St.Widget({style_class: 'weather-grid kma-grid', layout_manager: layout});
         layout.hookup_style(this._grid);
         box.add_child(this._grid);
+        // 출처: 에어코리아 약관 제7조 — 자료 출처(환경부/한국환경공단) 표기 의무. 늘 보이게 둔다.
+        box.add_child(new St.Label({style_class: 'kma-src', text: '자료: 기상청 · 환경부/한국환경공단'}));
 
         this.connect('clicked', onClick);
         // 테마가 바뀌면(라이트 ↔ 다크) 한 색 아이콘 판을 다시 고른다
@@ -124,7 +126,7 @@ class KmaSection extends St.Button {
     }
 
     loading(region) {
-        this._location.text = `${region} · 기상청`;
+        this._location.text = region;
         this._warn.hide();
         this._bigKind = null;
         this._sumIcon.gicon = null;
@@ -150,7 +152,7 @@ class KmaSection extends St.Button {
         else
             this.remove_style_class_name('kma-light');
         const age = ageMs > AGE_NOTE_MS ? ` (${Math.round(ageMs / 60000)}분 전)` : '';
-        this._location.text = `${region} · 기상청${age}`;
+        this._location.text = `${region}${age}`;
 
         const w = d.warnings ?? [];
         this._warn.visible = w.length > 0;

@@ -28,6 +28,8 @@ const ICONS = GLib.build_filenamev([HERE, 'icons']);
 const REFRESH_S = 600;
 const TICK_MS = 50;              // 큰 아이콘 장면 바꾸기(20장/초)
 const SNAPSHOT = GLib.getenv('KMA_APP_SNAPSHOT');
+// 출처: 에어코리아 약관 제7조 — 자료 출처(환경부/한국환경공단) 표기 의무. 창 맨 아래 한 줄로 늘 보이게 둔다.
+const SOURCE_LINE = '자료: 기상청, 환경부/한국환경공단(에어코리아) · 대기질 실시간 값은 확정 전 자료입니다.';
 // 값: 시간별 한 칸 56px. 높이 166 = 하늘 띠 60(시각 · 아이콘) + 그래프 · 강수확률.
 const COL_W = 56;
 const TL_H = 166;
@@ -85,6 +87,8 @@ window:not(.light) .aq-g0 { color: #99c1f1; } window:not(.light) .aq-g1 { color:
 window:not(.light) .aq-g2 { color: #ffbe6f; } window:not(.light) .aq-g3 { color: #f66151; }
 .news { font-size: 15px; }
 .sec-note { font-size: 12.5px; }
+/* 출처 글자: 흐린 설명(dim-label, 대비 약 2.9:1)보다 진하게 — 약 5.8:1 */
+.src-note { opacity: .8; }
 `;
 
 function settings() {
@@ -193,6 +197,7 @@ class WeatherWindow {
         page.append(split);
         this.note = label('', ['dim-label', 'caption'], {wrap: true});
         page.append(this.note);
+        page.append(label(SOURCE_LINE, ['src-note', 'caption'], {xalign: 0, wrap: true}));
 
         this.settingsId = this.settings.connect('changed::region-name', () => this.refresh());
         this.timer = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, REFRESH_S, () => {

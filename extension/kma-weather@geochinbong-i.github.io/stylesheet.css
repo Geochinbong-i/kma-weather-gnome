@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: GPL-2.0-or-later */
 /* 상단 바 날씨 칸. 나머지는 GNOME 원래 weather-* 클래스를 그대로 쓴다.
-   .kma-light = 밝은 메뉴(라이트 테마) — 확장이 글자색 밝기로 붙인다. */
+   .kma-light = 밝은 메뉴(라이트 테마) — 확장이 데스크톱 color-scheme 설정으로 붙인다. */
 .kma-summary { spacing: 10px; padding: 4px 0 4px; }
 .kma-big-chip { border-radius: 16px; padding: 2px; }
 .kma-light .kma-big-chip { background-color: #dde7f2; }
@@ -18,3 +18,6 @@
 .kma-pop-zero { color: #a9a9a9; }
 .kma-light .kma-pop { color: #1a5fb4; }
 .kma-light .kma-pop-zero { color: #6e6e76; }
+/* 자료 출처 한 줄 — 대비: 다크 #c0bfbc / 바탕 약 #3a3a3a ≈ 6:1, 라이트 #5e5c64 / #ebebed 5.5:1 */
+.kma-src { color: #c0bfbc; font-size: 0.85em; padding-top: 4px; }
+.kma-light .kma-src { color: #5e5c64; }
