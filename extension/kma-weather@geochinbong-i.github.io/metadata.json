@@ -1,0 +1,9 @@
+{
+  "uuid": "kma-weather@geochinbong-i.github.io",
+  "name": "기상청 날씨",
+  "description": "캘린더 밑 날씨 칸을 기상청 예보로 보여 줍니다. 지금 날씨 · 최고/최저 · 5시간 기온과 강수확률 · 기상특보 · 미세먼지. 공공데이터포털 인증키가 필요합니다.",
+  "url": "https://github.com/Geochinbong-i/kma-weather-gnome",
+  "shell-version": ["46"],
+  "settings-schema": "org.gnome.shell.extensions.kma-weather",
+  "version": 1
+}

@@ -1,0 +1,20 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+/* 상단 바 날씨 칸. 나머지는 GNOME 원래 weather-* 클래스를 그대로 쓴다.
+   .kma-light = 밝은 메뉴(라이트 테마) — 확장이 글자색 밝기로 붙인다. */
+.kma-summary { spacing: 10px; padding: 4px 0 4px; }
+.kma-big-chip { border-radius: 16px; padding: 2px; }
+.kma-light .kma-big-chip { background-color: #dde7f2; }
+.kma-summary-icon { icon-size: 56px; }
+.kma-summary-temp { font-size: 1.6em; font-weight: 500; }
+.kma-cond-box { spacing: 6px; }
+.kma-pill { background-color: #5c4500; color: #f8e45c; border-radius: 999px; padding: 0 8px; font-weight: bold; font-size: 0.9em; }
+.kma-light .kma-pill { background-color: #fbe9a8; color: #5c4500; }
+.kma-summary-minmax { color: #c0bfbc; font-size: 0.9em; }
+.kma-light .kma-summary-minmax { color: #5e5c64; }
+.kma-small-icon { icon-size: 36px; }
+.kma-grid { spacing-rows: 0px; }
+.kma-grid .weather-forecast-time, .kma-grid .weather-forecast-temp { padding: 0; margin: 0; }
+.kma-pop { font-size: 0.85em; color: #99c1f1; }
+.kma-pop-zero { color: #a9a9a9; }
+.kma-light .kma-pop { color: #1a5fb4; }
+.kma-light .kma-pop-zero { color: #6e6e76; }

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=기상청 날씨
+Comment=기상청 단기 · 중기예보, 특보, 미세먼지
+Exec=gjs -m @APPDIR@/main.js
+Icon=@APPDIR@/icons/app.svg
+Categories=Utility;
+StartupNotify=true
